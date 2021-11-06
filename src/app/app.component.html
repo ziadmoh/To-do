@@ -1,0 +1,17 @@
+<div class="container-fluid h-1">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-6 text-center py-4 px-2 proj-container">
+      <h1 class="todo-label">Todo App</h1>
+      <div class="input-container px-2">
+        <input class="tasks-input w-100 p-2" [(ngModel)]="currentTask">
+        <i class="fas fa-plus add-task-btn" (click)="onAddTask()"></i>
+      </div>
+      <div class="tasks-container">
+          <div *ngFor="let task of tasks;let i =index" class="task-element d-flex flex-row justify-content-between">
+            <span>{{task}}</span> 
+            <i class="fas fa-trash delete-icon" (click)="onRemoveTask(i)"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
